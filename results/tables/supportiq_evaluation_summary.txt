@@ -1,0 +1,41 @@
+SUPPORTIQ — EVALUATION SUMMARY
+======================================================================
+
+Frozen gold set: 172
+Target-intent gold cases: 151
+
+AGENT GOLD EVALUATION
+----------------------------------------------------------------------
+Intent accuracy: 0.4768211920529801
+Intent macro-F1: 0.3752618168881393
+AUTO_HANDLE: 6
+ESCALATE: 166
+
+HUMAN REPLY REVIEW
+----------------------------------------------------------------------
+Cases: 32
+Intent accuracy on review sample: 0.4062
+Mean reply quality / 2: 0.9688
+Mean groundedness / 2: 1.8125
+Human AUTO_HANDLE: 12
+Human ESCALATE: 20
+
+CONFIDENCE WARNING
+----------------------------------------------------------------------
+High-confidence cases (>= 0.70): 3
+High-confidence wrong: 2
+High-confidence error rate: 0.6667
+
+LLM JUDGE
+----------------------------------------------------------------------
+Executed: True
+Model: gemini-3.5-flash-lite
+Cases: 32
+Reply quality exact agreement: 0.1250
+Reply quality quadratic kappa: 0.0608
+Grounded exact agreement: 0.4688
+Grounded quadratic kappa: -0.1069
+Handling exact agreement: 0.6562
+Handling kappa: 0.1373
+Agreement is descriptive because the review set contains 32 cases.
+LLM judge is treated as a secondary evaluator, not ground truth.

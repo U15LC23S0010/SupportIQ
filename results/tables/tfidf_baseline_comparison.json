@@ -1,0 +1,31 @@
+{
+  "shared_split": {
+    "random_state": 42,
+    "test_size": 0.2,
+    "group_column": "conversation_id",
+    "training_rows": 1283,
+    "validation_rows": 309,
+    "training_conversations": 812,
+    "validation_conversations": 204
+  },
+  "gold": {
+    "total_rows": 172,
+    "target_rows": 151
+  },
+  "results": {
+    "tfidf_logistic_regression": {
+      "development_accuracy": 0.9352750809061489,
+      "development_macro_f1": 0.8083256452885237,
+      "gold_accuracy": 0.4768211920529801,
+      "gold_macro_f1": 0.3752618168881393,
+      "gold_target_rows": 151
+    },
+    "tfidf_linear_svc": {
+      "development_accuracy": 0.9352750809061489,
+      "development_macro_f1": 0.8083256452885237,
+      "gold_accuracy": 0.44370860927152317,
+      "gold_macro_f1": 0.3457277862429405,
+      "gold_target_rows": 151
+    }
+  }
+}

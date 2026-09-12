@@ -1,0 +1,19 @@
+{
+  "gold_total_rows": 172,
+  "gold_target_rows": 151,
+  "intent_accuracy": 0.4768211920529801,
+  "intent_macro_f1": 0.3752618168881393,
+  "auto_handle_count": 6,
+  "escalate_count": 166,
+  "auto_handle_rate": 0.03488372093023256,
+  "escalation_rate": 0.9651162790697675,
+  "safety_predictions": 33,
+  "safety_escalated": 33,
+  "safety_escalation_rate": 1.0,
+  "mean_intent_confidence": 0.3545638848061993,
+  "median_intent_confidence": 0.28921320184302995,
+  "mean_evidence_consistency": 0.27906976744186046,
+  "median_evidence_consistency": 0.0,
+  "mean_top_retrieval_similarity": 0.30318759153663133,
+  "median_top_retrieval_similarity": 0.2685126202557454
+}

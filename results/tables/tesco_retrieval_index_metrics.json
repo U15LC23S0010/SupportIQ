@@ -1,0 +1,13 @@
+{
+  "source": "results\\tables\\tesco_historical_customer_response_corpus.csv",
+  "records": 37855,
+  "features": 80000,
+  "ngram_range": [
+    1,
+    2
+  ],
+  "min_df": 2,
+  "max_df": 0.98,
+  "sublinear_tf": true,
+  "max_features": 80000
+}

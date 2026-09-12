@@ -1,0 +1,24 @@
+SUPPORTIQ — HUMAN VS LLM JUDGE AGREEMENT
+============================================================
+
+Cases: 32
+
+REPLY QUALITY
+------------------------------------------------------------
+Exact agreement: 0.1250
+Quadratic weighted Cohen's kappa: 0.0608
+
+GROUNDED
+------------------------------------------------------------
+Exact agreement: 0.4688
+Quadratic weighted Cohen's kappa: -0.1069
+
+HANDLING DECISION
+------------------------------------------------------------
+Exact agreement: 0.6562
+Cohen's kappa: 0.1373
+
+NOTE
+------------------------------------------------------------
+Agreement statistics are descriptive because the review set
+contains only 32 cases.

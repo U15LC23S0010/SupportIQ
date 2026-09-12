@@ -1,3 +1,4 @@
+@'
 .venv/
 __pycache__/
 *.py[cod]
@@ -9,10 +10,25 @@ __pycache__/
 !.env.example
 
 data/raw/*
-data/processed/*
-data/golden/*
 
-results/
+results/*
+!results/
+!results/models/
+!results/models/*.joblib
+
+!results/tables/
+!results/tables/tesco_golden_evaluation_set_172.csv
+!results/tables/supportiq_agent_gold_predictions.csv
+!results/tables/supportiq_agent_evaluation_metrics.json
+!results/tables/supportiq_agent_evaluation_report.txt
+!results/tables/supportiq_evaluation_summary.json
+!results/tables/supportiq_evaluation_summary.txt
+!results/tables/supportiq_reply_human_review_sample_32_scored.csv
+!results/tables/supportiq_llm_judgments_32.csv
+!results/tables/supportiq_human_llm_agreement.json
+!results/tables/supportiq_human_llm_agreement.txt
+!results/tables/supportiq_top5_failure_cases.csv
 
 .DS_Store
 Thumbs.db
+'@ | Set-Content .\.gitignore -Encoding UTF8

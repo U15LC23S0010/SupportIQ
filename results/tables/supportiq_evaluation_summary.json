@@ -1,0 +1,47 @@
+{
+  "gold_set": {
+    "total_cases": 172,
+    "target_intent_cases": 151
+  },
+  "agent_gold_evaluation": {
+    "gold_total_rows": 172,
+    "gold_target_rows": 151,
+    "intent_accuracy": 0.4768211920529801,
+    "intent_macro_f1": 0.3752618168881393,
+    "auto_handle_count": 6,
+    "escalate_count": 166,
+    "auto_handle_rate": 0.03488372093023256,
+    "escalation_rate": 0.9651162790697675,
+    "safety_predictions": 33,
+    "safety_escalated": 33,
+    "safety_escalation_rate": 1.0,
+    "mean_intent_confidence": 0.3545638848061993,
+    "median_intent_confidence": 0.28921320184302995,
+    "mean_evidence_consistency": 0.27906976744186046,
+    "median_evidence_consistency": 0.0,
+    "mean_top_retrieval_similarity": 0.30318759153663133,
+    "median_top_retrieval_similarity": 0.2685126202557454
+  },
+  "human_review": {
+    "cases": 32,
+    "intent_accuracy": 0.40625,
+    "mean_reply_quality": 0.96875,
+    "mean_grounded": 1.8125,
+    "human_auto_handle": 12,
+    "human_escalate": 20,
+    "high_confidence_cases": 3,
+    "high_confidence_wrong": 2,
+    "high_confidence_wrong_rate": 0.6666666666666666
+  },
+  "llm_judge": {
+    "executed": true,
+    "model": "gemini-3.5-flash-lite",
+    "cases": 32,
+    "reply_quality_exact_agreement": 0.125,
+    "reply_quality_quadratic_kappa": 0.0608,
+    "grounded_exact_agreement": 0.46875,
+    "grounded_quadratic_kappa": -0.1069,
+    "handling_exact_agreement": 0.65625,
+    "handling_kappa": 0.1373
+  }
+}

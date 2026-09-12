@@ -1,0 +1,50 @@
+SUPPORTIQ — AGENT EVALUATION HARNESS
+================================================================================
+
+Gold rows: 172
+Target-intent rows: 151
+Intent Accuracy: 0.4768
+Intent Macro-F1: 0.3753
+AUTO_HANDLE: 6
+ESCALATE: 166
+AUTO_HANDLE rate: 0.0349
+Escalation rate: 0.9651
+Safety predictions: 33
+Safety escalated: 33
+Safety escalation rate: 1.0000
+Mean intent confidence: 0.3546
+Median intent confidence: 0.2892
+Mean evidence consistency: 0.2791
+Median evidence consistency: 0.0000
+Mean retrieval similarity: 0.3032
+Median retrieval similarity: 0.2685
+
+CLASSIFICATION REPORT
+================================================================================
+                            precision    recall  f1-score   support
+
+            delivery_order       0.52      0.85      0.65        26
+           pricing_payment       0.67      0.11      0.18        19
+       store_staff_service       0.53      0.50      0.52        16
+      product_availability       0.43      0.88      0.58        24
+           product_quality       0.75      0.22      0.34        27
+  product_safety_sensitive       0.39      0.65      0.49        17
+product_information_policy       0.33      0.20      0.25        10
+       feedback_suggestion       0.00      0.00      0.00        12
+
+                  accuracy                           0.48       151
+                 macro avg       0.45      0.42      0.38       151
+              weighted avg       0.50      0.48      0.41       151
+
+
+CONFUSION MATRIX
+================================================================================
+                            delivery_order  pricing_payment  store_staff_service  product_availability  product_quality  product_safety_sensitive  product_information_policy  feedback_suggestion
+delivery_order                          22                0                    1                     2                1                         0                           0                    0
+pricing_payment                          7                2                    3                     6                0                         1                           0                    0
+store_staff_service                      3                0                    8                     2                1                         0                           2                    0
+product_availability                     1                0                    1                    21                0                         1                           0                    0
+product_quality                          5                1                    1                     7                6                         6                           1                    0
+product_safety_sensitive                 1                0                    0                     4                0                        11                           1                    0
+product_information_policy               2                0                    0                     4                0                         2                           2                    0
+feedback_suggestion                      1                0                    1                     3                0                         7                           0                    0

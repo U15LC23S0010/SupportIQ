@@ -1,0 +1,18 @@
+{
+  "baseline": "majority_class",
+  "majority_intent": "delivery_order",
+  "accepted_development_rows": 1592,
+  "development_label_counts": {
+    "delivery_order": 537,
+    "product_availability": 464,
+    "store_staff_service": 167,
+    "product_safety_sensitive": 120,
+    "product_quality": 111,
+    "pricing_payment": 83,
+    "product_information_policy": 79,
+    "feedback_suggestion": 31
+  },
+  "gold_target_rows": 151,
+  "accuracy": 0.17218543046357615,
+  "macro_f1": 0.03672316384180791
+}
