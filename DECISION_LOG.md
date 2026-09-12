@@ -26,7 +26,8 @@
 
 7. **Used conservative high-precision weak supervision**
 
-   A1.6 weak labels were used only to create development data. The accepted A1.6 set contained zero conflicts, and the rules were deliberately conservative. Weak labels were never treated as ground truth.
+   A1.6 weak labels were used only to create development data. The accepted A1.6 set contained 1,592 labels, and the rules were deliberately conservative. Ambiguous or multi-match cases were not accepted. Weak labels were never treated as ground truth.
+   
 
 8. **Discarded A1.7**
 
