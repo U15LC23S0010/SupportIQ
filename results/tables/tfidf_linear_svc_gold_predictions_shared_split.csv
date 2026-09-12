@@ -1,0 +1,173 @@
+conversation_id,evaluation_incoming_tweet_id,evaluation_incoming_message,human_intent,predicted_intent,correct
+2531,2512,@Tesco If you can actually get onto the website to order ......,delivery_order,delivery_order,True
+29141,29141,".@tesco and @sainsburys, why have supplies of Dunn's River jerk seasoning dried up?",product_availability,product_availability,True
+31574,31574,@Tesco 《 as our main branch but due to moving postcode you wont allow this.needs sorting or customer of 6yrs is changing her supermarket,delivery_order,delivery_order,True
+32061,32061,It's official... @Tesco red peppers are lovely &amp; red but taste of nothing #TasteTest https://t.co/dK6EomZCQM,product_quality,product_availability,False
+34737,34737,@Tesco just visited great Notley Essex why don't you stock a basic calculator for £1 to £3 as don't need £9.99 scientific one?,product_availability,product_availability,True
+38283,38283,So gross. Eating a white chocolate cookie from @Tesco and it’s got a long thick dark hair in it🤢🤢 https://t.co/2dhdFKwiSt,product_safety_sensitive,product_safety_sensitive,True
+38919,38919,Hi @Tesco bought a salad bowl from you and found a piece of plastic it in. I don’t think that’s one of my five a day. #hazard #foodsafety https://t.co/YTCPitgd64,product_safety_sensitive,product_safety_sensitive,True
+46630,46630,@Tesco disgusting. https://t.co/fyDvd3oLye,product_safety_sensitive,product_availability,False
+60380,60380,WARNING ! Do not buy @Tesco ripped jeans ! I wore them once and now the ‘hole’ on my knee is literally split to the zip ! #WasteOfMoney,product_quality,product_availability,False
+66073,66073,@Tesco @131115 4yr wedding anniversary today and my wife bought me the classic chocolate pack....1 bar for each year. Open it this morning and 1 bar is missing....my wife didn’t eat it!! 😞😞😞 #dairymilkismyfavourite https://t.co/E18I4NOMXL,product_quality,delivery_order,False
+73791,73791,"@119373  @Tesco  how about following suit, #tesco? Supermarkets back plastic bottle refunds
+
+https://t.co/LVcoXnz35w",feedback_suggestion,product_safety_sensitive,False
+73795,73795,Hey @Tesco why are these different prices . They are exactly the same. https://t.co/fZdkev6k58,pricing_payment,product_availability,False
+76293,76293,Are you kidding me @Tesco #BLTmyarse https://t.co/317pcIj7jJ,product_quality,product_safety_sensitive,False
+81014,81014,"@Tesco been on hold for ages to cancel Delivery Saver.
+Last thing I remember I was
+Running for the door
+I had to find the passage back to the place I was before
+'Relax' said the night man
+'We are programmed to receive.
+You can check out any time you like
+But you can never leave!",delivery_order,delivery_order,True
+95876,95876,@Tesco food delivery not here. Meant to be here between 8pm and 9pm. First time back with you guys after a long time since the last balls up.  It's not looking good for future custom from us.,delivery_order,delivery_order,True
+95909,95899,@Tesco Nothing available still. Looks like I aint getting a Christmas delivery slot.,delivery_order,delivery_order,True
+102252,102252,@Tesco tried to buy a baby toy in store today got to till to be told I can’t buy it! Staff rude no explanation #rude#notoy4baby!!!!!!,store_staff_service,store_staff_service,True
+112068,112068,"@Tesco what is it with the hand hald scanner, every time you use it they check your bags, (not thoroughly) are they suggesting (again) I am a thief. I am disgusted. May not use it again, what's the point of having it?",store_staff_service,product_information_policy,False
+113900,113900,Single use plastic spoon @Tesco https://t.co/J3JaFM4m4V,product_information_policy,product_safety_sensitive,False
+138320,138320,@Tesco hi. My dad is ordering an item on online but when in checkout it isn’t applying his staff discount. His account is set up with his colleague club card details. What is he doing wrong ?,pricing_payment,store_staff_service,False
+143025,143025,@Tesco when are xmas delivery slots available for delivery saver subscribers?,product_information_policy,delivery_order,False
+143089,143089,@Tesco why is the oxford store closed?,store_staff_service,product_information_policy,False
+144294,144294,"@Tesco yet again despite previous complaints delivery driver showing no consideration by blocking my driveway, enough is enough #tescodoesntcare https://t.co/92HAH5WsOG",store_staff_service,delivery_order,False
+145966,145966,"@Tesco what is up with your milk?! This has happened before, maybe one day or on the day, but 3 days before?!?! Absolutely disgusting. #disgusting #iboughtmilknotcottagecheese https://t.co/9ojPrShIvU",product_quality,product_availability,False
+150673,150673,Massive thank you to @Tesco Bramley and Ilkley for sorting out 400selection boxes and saving our school Christmas fair https://t.co/CPRw2sHQmH,feedback_suggestion,product_availability,False
+150676,150676,"Hey @Tesco, your Bounds Green store needs more staff; the queue is always ridiculous. Calling it  'express' is false advertising.",store_staff_service,product_availability,False
+162209,162209,@Tesco this bottel was very flat from the first glass. Bought to celebrate first night of the holiday Didn’t ask for reciept have gone to Sainsbury’s to get more! Very sad with you #firstworldproblem #sadtimes https://t.co/GELabZ2lxo,product_quality,delivery_order,False
+162211,162211,@Tesco when can I book Xmas delivery slots I am a delivery saver customer?,product_information_policy,delivery_order,False
+168065,168064,@Tesco Sorry don’t know what happened! Yea was at Tesco parkhead (Glasgow) tonight and the car park was like an ice rink and should maybe be gritted. I did say in store but no one seemed bothered! Thanks,store_staff_service,store_staff_service,True
+172393,172393,@Tesco Why has your Bletchley branch not had any Yule logs available for days. Not even the 'Finest' ones.,product_availability,product_availability,True
+173578,173578,@Tesco please restock these!! #lemons #icedcaramels https://t.co/2JyRo92I1v,product_availability,product_availability,True
+185495,185495,@Tesco hi I ordered an item for click and collect due today at store but it's not dispatched yet on my account??,delivery_order,delivery_order,True
+278579,278579,Genuinely hate how supermarkets rip off those who need free from food. Increase the price cos it’s free from despite there being less in it! @Tesco @117249 @sainsburys,pricing_payment,product_safety_sensitive,False
+289641,289641,"Any idea why @Tesco Maple BBQ Hot Smoked Salmon Chunks are unsuitable for freezing? Other salmon freezes okay, why not this one?",product_information_policy,product_availability,False
+316533,316533,Child Unit 2 just went to open a can of @Tesco Orange Zero and it's sealed but empty. Someone owes me some aspartame and potassium sorbate.,product_quality,delivery_order,False
+398392,2311398,@Tesco I brought the product from Tesco Brent Park https://t.co/HEiZYLzSnf,product_quality,product_safety_sensitive,False
+440203,440203,@Tesco are your finest crisps supposed to taste stale?,product_quality,delivery_order,False
+441566,441566,@Tesco staff in the Torry store in Aberdeen are a joke,store_staff_service,store_staff_service,True
+443398,443398,"@Tesco You’re a joke. Taking my money. Never coming here again, bloody ridiculous.",pricing_payment,store_staff_service,False
+444551,444551,@220300 were @tesco please come and support our home xxxx https://t.co/HT0S0sD2dg,feedback_suggestion,product_availability,False
+446950,446950,"Got myself a new coat with a ""hidden mobile phone pocket"". I can't find the pocket. Anywhere. Help @Tesco where is it or you having me on?",product_information_policy,product_availability,False
+452131,452131,"@Tesco go to order my online food shop, earliest spot is 2pm Saturday! Why do I pay a monthly delivery saver? Asda/Sainsbury's can you help?",delivery_order,delivery_order,True
+453517,453517,"@Tesco No custard powder in your lupus street express, why not??",product_availability,store_staff_service,False
+476576,476576,I can’t believe because of someone being so lazy wrapping my item in bubble wrap. my dad now knows his Christmas present. Well done @Tesco,delivery_order,delivery_order,True
+481168,481168,@Tesco are you stocking gluten free mince pies this Christmas? Seen them advertised but can’t find in local store!! Come on Tesco - get with it #glutenfree #glutenfreechristmas,product_availability,product_availability,True
+497774,497774,"@Tesco you might want to check you stock at the st oswalds branch, just brought these home, look at the date! https://t.co/ZhxKrHZT22",product_quality,product_availability,False
+507480,507480,"oh surprise surprise, being pissed about by @Tesco yet again, seriously considering knocking it on the head now #toomantchances #verylittlehelp",delivery_order,product_quality,False
+508907,508907,@Tesco The home delivery team at the worksop store that delivers my shopping needs some praise or a reward for their good quality customer service.😁 10/10,feedback_suggestion,delivery_order,False
+516781,516781,When you order an item from tesco direct @tesco for local store delivery because you need the item for a gift and they don’t notify you it has arrived and you have to chase them up... #toolate #shouldhave gone to B&amp;Q @2698,delivery_order,delivery_order,True
+519919,519919,@Tesco when is your my little pony mega collection going to be back in stock!?,product_availability,product_availability,True
+535397,535397,@Tesco another day at Hemsworth tesco to find the parent &amp; child spaces filled with childless adults being lazy! You need to police your car park better,store_staff_service,product_quality,False
+537003,537003,Found this in @Tesco microwaveable rice! They are unable to report it as I threw it away rather than return it. Do not buy! #mould @221430 https://t.co/rgS2RQzZUJ,product_safety_sensitive,product_availability,False
+552750,552750,@Tesco click and collect - shambles.,delivery_order,delivery_order,True
+555523,555523,"@Tesco What?!! No Finest Chicken Satay Pyramids party food this year?!! I wait all year for these!! I am distraught!! 😭 Right, that's it, cancel Xmas....",product_availability,delivery_order,False
+555559,555559,tedious @tesco in Mile End Road had cut flowers priced in the box as half price or £3 but when I asked about them turned out they were marked at £10 or more! #tesco wouldn't honour their mistake,pricing_payment,product_availability,False
+576216,576216,@Tesco @123088 when you buy 10 but only get 9 so@someone is missing out!! Ain’t hard to count to 10 surely https://t.co/XhvrrXnbkX,product_quality,delivery_order,False
+606669,606669,@Tesco why do your self service tills give your 15p change in only coppers? #everytime Politely asked checkout person to change but refused,store_staff_service,store_staff_service,True
+607583,607583,@Tesco Bordon super kind super helpful Staff 👍🏻👏🏻👏🏻👏🏻👏🏻👏🏻👏🏻👏🏻👏🏻👏🏻👏🏻👏🏻❤️ing them,feedback_suggestion,store_staff_service,False
+613366,613366,"It's raining and blowing a gale, yet this is where my @Tesco delivery by @147613 was left. It was also delivered outside the allotted delivery slot and no signature was obtained either. Awful, awful service. https://t.co/xVH9CX2FnJ",delivery_order,delivery_order,True
+637916,637916,@Tesco missing a falafel tonight and unfortunately 9 doesn’t divide by 2 :( https://t.co/NkhAcxM2sw,product_quality,delivery_order,False
+654792,654792,@Tesco  THIS IS OUTRAGEOUS. I want my money back I've paid for packaging https://t.co/cQS2JwQydY,product_quality,product_availability,False
+658208,658207,@Tesco It's not running late your agent lied all evening and told me at 22.59 my shopping will not be delivered after promises it was on the way and a ten pound voucher is an insult #lastshop@tesco@TheSun,delivery_order,delivery_order,True
+675413,675413,@Tesco thanks for the present inside my orange juice carton 😍 https://t.co/tv88ir75ij,product_safety_sensitive,product_safety_sensitive,True
+685914,685914,"#Christmas #sandwich tasting. And the winner is *drum roll*
+.
+.
+.
+.
+
+@Tesco Finest Turkey Feast https://t.co/6uvaqkKigP",feedback_suggestion,product_safety_sensitive,False
+688180,688180,"Our office has a new friend; a preying mantis called Fred, courtesy of a bag of @Tesco mixed salad leaves. He’s being cared for by Admin, although Tesco want him posting back for my colleague to get his 75p refund. https://t.co/bp87CrfIrG",feedback_suggestion,delivery_order,False
+694055,694055,"@Tesco hi, is there any way you can check stock at a store? I don’t want to call and 03 number to be told the item I want isn’t available. Thank you",product_availability,product_availability,True
+704881,704881,"Have you ever heard anything so ridiculous?! @Tesco refused to sell me COD because they don't know which price to sell it for, the black Friday price or normal price even though I offered to pay the full normal price anyway?!",pricing_payment,pricing_payment,True
+720466,720466,@Tesco I bought a Microsoft office from Stockport Tesco extra. Microsoft say it is not activated. Store won't help. What can I do?,product_information_policy,product_availability,False
+730133,730133,"@Tesco hello, have you stopped doing your Ranch Salad in a bag? There's been none in for a week and I buy four bags a week at least 🙁",product_availability,product_availability,True
+761822,761822,"@Tesco @146822 Sunbites purchased full price on Sunday 8th Oct, just noticed the Best Before was the 7th Oct 🤔 https://t.co/6wsIRlosMY",product_quality,pricing_payment,False
+764546,764546,"@Tesco delivery from 7-8 hasn’t turned up, just looked and our contact details are out of date. Is it still coming? Order 393161325",delivery_order,delivery_order,True
+765196,765196,@Tesco just sat down to eat our tea and found this. To say we feel physically sick is an understatement! 🤢 https://t.co/VdKFjAiwn6,product_safety_sensitive,product_safety_sensitive,True
+781008,781008,@Tesco am seriously unimpressed with the behaviour of one of your delivery drivers today 😡 very aggressive as I drove past very intimidating,store_staff_service,delivery_order,False
+789407,789407,"@Tesco hi, have just signed up for Xmas https://t.co/xKfh4C6DZP can i top up my account?can’t see any option on my clubcard account. Thanks",pricing_payment,delivery_order,False
+794767,794767,@Tesco well you have fucked up my holiday. Ordered money bureau is suppose to be open until 8pm got a message at 3pm saying they are closing,pricing_payment,delivery_order,False
+796819,796819,@Tesco Hiya would it be at all possible to find out what stores in Liverpool area stock the new Vegan Slim Fast Vitality powder please? :),product_availability,product_availability,True
+809035,809034,@Tesco @312780 The people @Tesco use for deliveries are a joke. Pre ordered a game to here on Friday &amp; it's still not here. It's uttter bullshit.,delivery_order,delivery_order,True
+817762,817762,@Tesco Your prices have increased dramatically,pricing_payment,store_staff_service,False
+824876,824876,@Tesco Been sat at my kitchen table since 7pm waiting for our delivery booked between 7 and 8. You owe me an evening,delivery_order,delivery_order,True
+832424,832424,@140046 please don't tell me you've discontinued the #vegan spicy burgers too now?!? Can't find them in @Tesco,product_availability,product_availability,True
+832795,832795,@Tesco you've let me down this morning. No chocolate twists. 😭😭😭 https://t.co/CoCyA7Qh3U,product_availability,delivery_order,False
+842760,842760,"@Tesco norham rd is a joke. Cafe has no hot food, but 2 staff. Hot counter has rude staff, and only spicy sausage. This was at 5pm",store_staff_service,store_staff_service,True
+844975,844975,"@Tesco good morning I have a strange question and I'm confused, I've been sent my xmas acct points amount and also been sent £10 worth of vouchers, now would that be 2 separate things? Don't want to spend the vouchers if it's actually the xmas card vouchers? Thx",pricing_payment,delivery_order,False
+866339,866339,.@tesco How is this “you won’t pay more” when substituted item is less than half the weight? #tesco https://t.co/uVVNj5jxWA,pricing_payment,product_availability,False
+889895,889895,"@Tesco went to local store bought baby vests have been over charged 50p.choose to not have receipt.
+How how others have had this !!!!!",pricing_payment,pricing_payment,True
+893527,893527,"Why only offer 6-month delivery passes, making it £84/ yr? I was offered to renew for £72 for a year but can non longer do it? @Tesco",pricing_payment,delivery_order,False
+917146,917146,@Tesco Why does your website saying clothes are in stock at my local store yet staff say they haven't had any delivered yet?! Waste of time!,product_availability,product_availability,True
+924693,924693,@Tesco got to ask whether all this packaging is necessary #saveourplanet #reducewaste https://t.co/2kCpXS3nYQ,feedback_suggestion,product_safety_sensitive,False
+938336,938336,Ooh thanks @Tesco for this lovely #vegan wine thoroughly recommend it 😊 https://t.co/wFnGbzEe7c,feedback_suggestion,product_information_policy,False
+962736,962736,@117249 @Tesco @sainsburys  whats with the #garlicmushroomshortageuk,product_availability,product_availability,True
+972387,972387,Tesco. Every bit unhelpful. @Tesco 2135hrs and made to self serve as tills closed. Again. Not even customer service !!,store_staff_service,store_staff_service,True
+1001410,1001410,@Tesco  - my husband nearly died after using this!  - Not happy!  Warning to others! https://t.co/Gop2FGb1X0,product_safety_sensitive,product_safety_sensitive,True
+1007195,1007195,"@Tesco Hello, I didn't receive a 10p petrol voucher with my click &amp; collect this week?? How do I get this? Many thanks",delivery_order,delivery_order,True
+1008646,1008646,"@38758 @Tesco hi there, 2nd time at Tesco in Hammersmith, saw this, and no BReady ... no because are sold out, simply not there :-( https://t.co/XieAvqds62",product_availability,product_availability,True
+1014979,1014979,@Tesco Have you got rid of your sweet chilli tortilla wraps? 😱😭,product_availability,product_safety_sensitive,False
+1023103,1023103,@Tesco why don’t you sell Skinni wraps anymore? 😞,product_availability,product_availability,True
+1034632,1034632,@Tesco how do you accept a purchase a week ago for £350 and a week later say it’s not in stock.......,delivery_order,product_availability,False
+1035576,1035576,My friend @315776 can't reach the pay at pump to fill her car. Same as 8 yrs ago when she last complained. WTF?? @Tesco RTs welcome https://t.co/HvKseu5H7Z,pricing_payment,store_staff_service,False
+1049470,1049470,@Tesco absolutely shambolic customer service,store_staff_service,store_staff_service,True
+1067883,1067883,@Tesco This dropped out of a lettuce we bought. I'm not sure what it is but I wasn't expecting it. a tiny bug maybe but not metal lol. https://t.co/DxiHthiiGh,product_safety_sensitive,product_availability,False
+1078766,1078766,@Tesco there was absolutely nothing wrong with your Mac &amp; cheese. Why have you changed it and made it even more calories? #stopruiningmylife,product_quality,product_availability,False
+1097011,1097011,@Tesco a slug came out of this cauliflower when we cut it!😷😷 https://t.co/XRYdBvSHQ5,product_safety_sensitive,product_availability,False
+1105933,1105933,"@Tesco bot b milk frm T2832,21:05i went to t xps 3359, 21:15 but mngr denied to exchange or refund, 2nit my baby wont get his feed, thx Tsco",pricing_payment,delivery_order,False
+1108618,1108618,Poor popcorn this @Tesco no flavour at all https://t.co/8kj7syBDLz,product_quality,product_quality,True
+1123235,1123235,@Tesco can I ask you to check the use by dates on returned and RefundeD items please,product_safety_sensitive,delivery_order,False
+1130646,1130646,@Tesco awful breakfast at the Corby store!!,store_staff_service,store_staff_service,True
+1140135,1140135,"@Tesco
+Is the plastic bag for cauliflowers necessary?
+#reduceplasticpackaging https://t.co/ANpY0sdDWi",feedback_suggestion,product_safety_sensitive,False
+1149960,1149960,Bought a big bag of milky bar buttons from @Tesco and one of the bags inside legit had nothing in 😔 never felt so let down,product_quality,product_safety_sensitive,False
+1165207,1165207,"Sunday Funday! @54042 U12’s! ..... this could get very messy!
+#IcebergChallenge 😳😬
+Thank you SO much @Tesco for supporting #HealthyKids https://t.co/9YCQIJXivF",feedback_suggestion,product_availability,False
+1165466,1165466,@Tesco not the type of vegetable gravy we were expecting 🤢🤔 https://t.co/lJdmWMYtJG,product_quality,product_availability,False
+1165493,1165493,@Tesco hi is all your meat halal?  I don’t want to eat halal?  Can you please advise??,product_information_policy,product_information_policy,True
+1169033,1169033,@Tesco why can’t you get any deliveries on time?! One in 3 months on time is not good enough! Happy to take my money though!,delivery_order,delivery_order,True
+1170781,1170781,"Why are you selling Halal slaughtered meat to non Muslims?  Read the regulations
+@Tesco  @Morrisons @sainsburys @117249   @117250 @243762 https://t.co/TK6z6OPgSV",product_information_policy,product_availability,False
+1174149,1174149,What this in my raspberries @Tesco  ... it's a moving caterpillar 🤢 https://t.co/ho3mwWrM69,product_safety_sensitive,product_safety_sensitive,True
+1179809,1179809,@Tesco Why can’t I find these @49952 bags in any Tesco’s in Cardiff? https://t.co/uAKj70rYL9,product_availability,product_availability,True
+1209574,1209574,@Tesco your store Feltham I'm sick of the quality of the avocados. 40% of the time awful but in date. Here is the latest. Would you eat it? https://t.co/PG7SlunRN5,product_quality,product_quality,True
+1213537,1213535,"@Tesco Was in panic as to how to put the fire out, this product should not be on sale very unsafe",product_safety_sensitive,product_availability,False
+1213553,1213553,"@Tesco Hello Tesco, I'd like to complain about a product which landed my partner in A&amp;E after consumption, what is the best way to contact?",product_safety_sensitive,product_safety_sensitive,True
+1218507,1218507,@356113 Haven't been able to find our BFree brown seeded loaf bread anywhere for many weeks in Leeds. Please help!,product_availability,delivery_order,False
+1224668,1224668,I need to leave the house and my Tesco delivery is 45 minutes late this is VERY AGGRAVATING.,delivery_order,delivery_order,True
+1238267,1238267,@Tesco Could not purchase the special Oasis edition of Q magazine as your system didn't recognise the barcode! Why is it on the shelf then?!,pricing_payment,product_availability,False
+1246911,1246911,@Tesco Any reason your Briton Ferry store NEVER has any frozen peas in stock? Tins/fresh bankrupting us!,product_availability,product_availability,True
+1265873,1265873,"I was just about to eat this sandwich, it's full of mould @Tesco #disgusted https://t.co/pAPBsWKqoC",product_safety_sensitive,product_safety_sensitive,True
+1278214,1278214,"@Tesco why let me add to basket if there is no stock? I got a stock alert and it shows as ""low stock"" but not ""out of stock"". Frustrating :( https://t.co/79fohs4rWe",product_availability,product_availability,True
+1280686,1280686,The alternative to Christmas Pyes No! Over riding taste of pear no plum flavour and no cinnamon. @Tesco sorry just Wron…,product_quality,delivery_order,False
+1283493,1283493,@Tesco Really disappointing 'finest' mini mince pies. Barely half full!! #zoomin #dontbuy  #betterelsewhere https://t.co/7PWpPLSowm,product_quality,product_availability,False
+1288337,1288337,@Tesco Just found random pieces of plastic underneath my cooked fish which shouldn't be there. Now my dinners in the bin!,product_safety_sensitive,product_safety_sensitive,True
+1292131,1292131,Hey @51408 saw your wine in @Tesco today! Is it suitable for vegetarians? Didn't buy because it didn't say. TIA! 🙂,product_information_policy,product_information_policy,True
+1293100,1293100,"@Tesco is there a reason that every home delivery slot is unavailable? Like, every slot weeks in advance?! I feel like I've offended you lol",delivery_order,delivery_order,True
+1296348,1296348,@Tesco don't play me like this,delivery_order,product_availability,False
+1298553,1298553,Hey @Tesco I bought a chicken sandwich from my local express yest and had food poisoning for the last 24 hours what’s going on 🤢😩,product_safety_sensitive,product_safety_sensitive,True
+1299604,1299604,@Tesco Still waiting for my order 456356749,delivery_order,delivery_order,True
+1305685,1305685,"@Tesco my delivery is due between 4 n 8, surely my 1 hour slot should have been sent to me by now?",delivery_order,delivery_order,True
+1326407,1326407,@Tesco Why are your stores still giving out the old £1 coins today?,pricing_payment,product_availability,False
+1358253,1358253,Oi @tesco what the hell is this in my orange juice? Nearly vommed https://t.co/THBywbkNe9,product_safety_sensitive,product_safety_sensitive,True
+1358271,1358271,@Tesco how can I get someone from the uniform embroidery team to respond to my emails about your poor uniform products. Lasted one month! https://t.co/7bwIAY4aYJ,product_quality,store_staff_service,False
+1362023,1362023,"@Tesco Given my experience today, it appears some delivery drivers need re-education regarding customer service 😡I am no longer a customer.",store_staff_service,delivery_order,False
+1392534,1392534,"@Tesco Is the Mediterranean Focaccia from the fresh bread counter, supposed to still have frozen vegetables on top?",product_quality,product_information_policy,False
+1395786,1395786,Riddle me this: Why does @Tesco stock 3 diff Ecover non-bio laundry detergents and not a single 1 of the bio ones? @140778 who stocks bio?,product_availability,product_availability,True
+1406748,1406748,@Tesco are times that tough?? #RipOffBritain https://t.co/FbJBxW39ru,product_quality,product_information_policy,False
+1424315,1424315,Hey! @Tesco ! My pack of 8 mini tortillas only had 7 inside! Disappointing https://t.co/nXofw3OBgY,product_quality,product_safety_sensitive,False
+1440242,1440242,@Tesco pretty sure that's a Brazil nut on the pic but not included in ingredients. Always had them in before!! My fave too!! https://t.co/qgh9o6EPo0,product_information_policy,product_availability,False
+1443410,1443410,"@Tesco. I love your Finest fishcakes, but not their single-use, non-recyclable plastic container. Do you have any plans to change this?",feedback_suggestion,product_safety_sensitive,False
+1455668,1455668,"Apparently @Tesco used to stock @60498 but not any more? Super frustrating, Tesco is handiest for me but I love those soups.",product_availability,product_availability,True
+1462316,1462316,The worst #CustomerService from @Tesco tonight. Not impressed at all. Now I am minus my shopping and without a confirmed time for redelivery. Not good enough. Getting totally sick of the increasingly bad service from retailers.,delivery_order,store_staff_service,False
+1464954,1464954,@Tesco I bought low fat potato salad from Tesco Surrey Quays in pm of 14th and it went off the same day! It was not reduced. Very upset,product_quality,product_safety_sensitive,False
+1481946,1481946,Get yourself down to @Tesco they're prices are unbeatable! #CODWWII https://t.co/Kyteef5pU8,pricing_payment,product_availability,False
+1483691,1483691,@Tesco Late again for your grocery delivery! #lateagain  #poorservice,delivery_order,delivery_order,True
+1497391,1497391,@Tesco my Clubcard Boost still hasn't been emailed to me. Usually arrives in a few hours but it's now been nearly 24.,pricing_payment,delivery_order,False
+1510258,1510258,@Tesco apparently tescometro in Glasgow couldn’t provide a VAT receipt until the next day. How complicated do you make it?? Or is it just a lazy manager?,store_staff_service,product_availability,False
+1510593,1510593,Hey @Tesco quality sandwich work. https://t.co/waFExFiWzG,product_quality,product_quality,True

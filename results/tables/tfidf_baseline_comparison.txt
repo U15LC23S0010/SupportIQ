@@ -2,6 +2,7 @@ SUPPORTIQ — PAIRED TF-IDF BASELINE COMPARISON
 ================================================================================
 
 SHARED SPLIT
+Accepted A1.6 target rows: 1592
 Training rows: 1283
 Validation rows: 309
 Training conversations: 812
