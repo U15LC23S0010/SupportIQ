@@ -2,7 +2,7 @@
 
 ## Version
 
-Version 1.1 — frozen before the final golden evaluation set was finalized.
+if still tied, prefer the issue requiring greater support intervention or carrying greater support risk;
 
 ## Annotation objective
 

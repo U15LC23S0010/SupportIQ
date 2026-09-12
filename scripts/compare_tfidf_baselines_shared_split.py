@@ -10,18 +10,43 @@ from sklearn.pipeline import FeatureUnion
 from sklearn.model_selection import GroupShuffleSplit
 from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
-from sklearn.metrics import accuracy_score, f1_score, classification_report
+from sklearn.metrics import (
+    accuracy_score,
+    classification_report,
+    f1_score,
+)
 
 
-WEAK_PATH = Path("results/tables/tesco_weak_labels_a1_6.csv")
-GOLD_PATH = Path("results/tables/tesco_golden_evaluation_set_172.csv")
+WEAK_PATH = Path(
+    "results/tables/tesco_weak_labels_a1_6.csv"
+)
 
-MODEL_DIR = Path("results/models")
-TABLE_DIR = Path("results/tables")
+GOLD_PATH = Path(
+    "results/tables/tesco_golden_evaluation_set_172.csv"
+)
 
-SPLIT_PATH = TABLE_DIR / "tfidf_baseline_shared_split.csv"
-COMPARISON_PATH = TABLE_DIR / "tfidf_baseline_comparison.json"
-COMPARISON_REPORT_PATH = TABLE_DIR / "tfidf_baseline_comparison.txt"
+MODEL_DIR = Path(
+    "results/models"
+)
+
+TABLE_DIR = Path(
+    "results/tables"
+)
+
+SPLIT_PATH = (
+    TABLE_DIR
+    / "tfidf_baseline_shared_split.csv"
+)
+
+COMPARISON_PATH = (
+    TABLE_DIR
+    / "tfidf_baseline_comparison.json"
+)
+
+COMPARISON_REPORT_PATH = (
+    TABLE_DIR
+    / "tfidf_baseline_comparison.txt"
+)
 
 TARGET_INTENTS = [
     "delivery_order",
@@ -35,7 +60,7 @@ TARGET_INTENTS = [
 ]
 
 
-def build_features():
+def build_features() -> FeatureUnion:
     return FeatureUnion(
         [
             (
@@ -62,24 +87,78 @@ def build_features():
     )
 
 
-def main():
+def main() -> None:
     print("=" * 80)
     print("SUPPORTIQ — PAIRED TF-IDF BASELINE COMPARISON")
     print("=" * 80)
 
-    weak = pd.read_csv(WEAK_PATH)
+    if not WEAK_PATH.exists():
+        raise FileNotFoundError(
+            f"A1.6 weak-label file not found: {WEAK_PATH}"
+        )
+
+    if not GOLD_PATH.exists():
+        raise FileNotFoundError(
+            f"Golden evaluation file not found: {GOLD_PATH}"
+        )
+
+    weak = pd.read_csv(
+        WEAK_PATH
+    )
+
+    required_columns = {
+        "weak_intent",
+        "weak_label_status",
+        "customer_message",
+        "conversation_id",
+    }
+
+    missing_columns = (
+        required_columns
+        - set(weak.columns)
+    )
+
+    if missing_columns:
+        raise ValueError(
+            "Missing required A1.6 columns: "
+            f"{sorted(missing_columns)}"
+        )
 
     weak = weak[
-        weak["weak_intent"].isin(TARGET_INTENTS)
+        (weak["weak_label_status"] == "accepted")
+        & weak["weak_intent"].isin(
+            TARGET_INTENTS
+        )
     ].copy()
 
     weak = weak.dropna(
-        subset=["customer_message", "conversation_id"]
+        subset=[
+            "customer_message",
+            "conversation_id",
+        ]
     )
 
-    X = weak["customer_message"].fillna("").astype(str)
-    y = weak["weak_intent"].astype(str)
-    groups = weak["conversation_id"].astype(str)
+    if weak.empty:
+        raise ValueError(
+            "No accepted A1.6 target-intent rows remain "
+            "after filtering."
+        )
+
+    X = (
+        weak["customer_message"]
+        .fillna("")
+        .astype(str)
+    )
+
+    y = (
+        weak["weak_intent"]
+        .astype(str)
+    )
+
+    groups = (
+        weak["conversation_id"]
+        .astype(str)
+    )
 
     splitter = GroupShuffleSplit(
         n_splits=1,
@@ -88,23 +167,36 @@ def main():
     )
 
     train_idx, val_idx = next(
-        splitter.split(X, y, groups=groups)
+        splitter.split(
+            X,
+            y,
+            groups=groups,
+        )
     )
 
-    train_positions = set(train_idx)
+    train_positions = set(
+        train_idx
+    )
 
     split_df = pd.DataFrame(
         {
             "row_index": weak.index.astype(int),
             "conversation_id": groups.values,
             "split": [
-                "train" if i in train_positions else "validation"
+                "train"
+                if i in train_positions
+                else "validation"
                 for i in range(len(weak))
             ],
         }
     )
 
     TABLE_DIR.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
+
+    MODEL_DIR.mkdir(
         parents=True,
         exist_ok=True,
     )
@@ -121,15 +213,25 @@ def main():
     y_train = y.iloc[train_idx]
     y_val = y.iloc[val_idx]
 
-    print(f"Weak-label training rows: {len(weak):,}")
-    print(f"Training rows:          {len(X_train):,}")
-    print(f"Validation rows:        {len(X_val):,}")
     print(
-        f"Training conversations: "
+        f"Accepted A1.6 target rows: {len(weak):,}"
+    )
+
+    print(
+        f"Training rows: {len(X_train):,}"
+    )
+
+    print(
+        f"Validation rows: {len(X_val):,}"
+    )
+
+    print(
+        "Training conversations: "
         f"{groups.iloc[train_idx].nunique():,}"
     )
+
     print(
-        f"Validation conversations: "
+        "Validation conversations: "
         f"{groups.iloc[val_idx].nunique():,}"
     )
 
@@ -138,59 +240,95 @@ def main():
 
     vectorizer = build_features()
 
-    X_train_vec = vectorizer.fit_transform(X_train)
-    X_val_vec = vectorizer.transform(X_val)
+    X_train_vec = vectorizer.fit_transform(
+        X_train
+    )
 
-    print(
-        f"Training feature matrix: "
-        f"{X_train_vec.shape[0]:,} x {X_train_vec.shape[1]:,}"
+    X_val_vec = vectorizer.transform(
+        X_val
     )
 
     print(
-        f"Validation feature matrix: "
-        f"{X_val_vec.shape[0]:,} x {X_val_vec.shape[1]:,}"
+        "Training feature matrix: "
+        f"{X_train_vec.shape[0]:,} x "
+        f"{X_train_vec.shape[1]:,}"
+    )
+
+    print(
+        "Validation feature matrix: "
+        f"{X_val_vec.shape[0]:,} x "
+        f"{X_val_vec.shape[1]:,}"
     )
 
     models = {
-        "tfidf_logistic_regression": LogisticRegression(
-            max_iter=2000,
-            class_weight="balanced",
-            random_state=42,
+        "tfidf_logistic_regression": (
+            LogisticRegression(
+                max_iter=2000,
+                class_weight="balanced",
+                random_state=42,
+            )
         ),
-        "tfidf_linear_svc": LinearSVC(
-            C=1.0,
-            class_weight="balanced",
-            random_state=42,
+        "tfidf_linear_svc": (
+            LinearSVC(
+                C=1.0,
+                class_weight="balanced",
+                random_state=42,
+            )
         ),
     }
 
-    gold = pd.read_csv(GOLD_PATH)
+    gold = pd.read_csv(
+        GOLD_PATH
+    )
+
+    if "human_intent" not in gold.columns:
+        raise ValueError(
+            "Golden set must contain 'human_intent'."
+        )
+
+    if "evaluation_incoming_message" not in gold.columns:
+        raise ValueError(
+            "Golden set must contain "
+            "'evaluation_incoming_message'."
+        )
 
     gold_target = gold[
-        gold["human_intent"].isin(TARGET_INTENTS)
+        gold["human_intent"].isin(
+            TARGET_INTENTS
+        )
     ].copy()
 
     gold_target = gold_target.dropna(
-        subset=["evaluation_incoming_message"]
+        subset=[
+            "evaluation_incoming_message"
+        ]
     )
 
+    if len(gold_target) != 151:
+        raise ValueError(
+            "Expected 151 target-intent golden rows, "
+            f"found {len(gold_target)}"
+        )
+
     X_gold = (
-        gold_target["evaluation_incoming_message"]
+        gold_target[
+            "evaluation_incoming_message"
+        ]
         .fillna("")
         .astype(str)
     )
 
-    y_gold = gold_target["human_intent"].astype(str)
+    y_gold = (
+        gold_target["human_intent"]
+        .astype(str)
+    )
 
-    X_gold_vec = vectorizer.transform(X_gold)
+    X_gold_vec = vectorizer.transform(
+        X_gold
+    )
 
     results = {}
     reports = {}
-
-    MODEL_DIR.mkdir(
-        parents=True,
-        exist_ok=True,
-    )
 
     for name, model in models.items():
 
@@ -251,11 +389,21 @@ def main():
         )
 
         results[name] = {
-            "development_accuracy": val_accuracy,
-            "development_macro_f1": val_macro_f1,
-            "gold_accuracy": gold_accuracy,
-            "gold_macro_f1": gold_macro_f1,
-            "gold_target_rows": len(gold_target),
+            "development_accuracy": float(
+                val_accuracy
+            ),
+            "development_macro_f1": float(
+                val_macro_f1
+            ),
+            "gold_accuracy": float(
+                gold_accuracy
+            ),
+            "gold_macro_f1": float(
+                gold_macro_f1
+            ),
+            "gold_target_rows": int(
+                len(gold_target)
+            ),
         }
 
         reports[name] = {
@@ -292,9 +440,13 @@ def main():
             ]
         ].copy()
 
-        gold_predictions["predicted_intent"] = gold_pred
+        gold_predictions[
+            "predicted_intent"
+        ] = gold_pred
 
-        gold_predictions["correct"] = (
+        gold_predictions[
+            "correct"
+        ] = (
             gold_predictions["human_intent"]
             == gold_predictions["predicted_intent"]
         )
@@ -311,22 +463,22 @@ def main():
         )
 
         print(
-            f"Development Accuracy: "
+            "Development Accuracy: "
             f"{val_accuracy:.4f}"
         )
 
         print(
-            f"Development Macro-F1: "
+            "Development Macro-F1: "
             f"{val_macro_f1:.4f}"
         )
 
         print(
-            f"Gold Accuracy: "
+            "Gold Accuracy: "
             f"{gold_accuracy:.4f}"
         )
 
         print(
-            f"Gold Macro-F1: "
+            "Gold Macro-F1: "
             f"{gold_macro_f1:.4f}"
         )
 
@@ -335,18 +487,30 @@ def main():
             "random_state": 42,
             "test_size": 0.20,
             "group_column": "conversation_id",
-            "training_rows": len(train_idx),
-            "validation_rows": len(val_idx),
-            "training_conversations": (
-                groups.iloc[train_idx].nunique()
+            "training_rows": int(
+                len(train_idx)
             ),
-            "validation_conversations": (
-                groups.iloc[val_idx].nunique()
+            "validation_rows": int(
+                len(val_idx)
+            ),
+            "training_conversations": int(
+                groups.iloc[
+                    train_idx
+                ].nunique()
+            ),
+            "validation_conversations": int(
+                groups.iloc[
+                    val_idx
+                ].nunique()
             ),
         },
         "gold": {
-            "total_rows": len(gold),
-            "target_rows": len(gold_target),
+            "total_rows": int(
+                len(gold)
+            ),
+            "target_rows": int(
+                len(gold_target)
+            ),
         },
         "results": results,
     }
@@ -364,6 +528,7 @@ def main():
         "=" * 80,
         "",
         "SHARED SPLIT",
+        f"Accepted A1.6 target rows: {len(weak)}",
         f"Training rows: {len(train_idx)}",
         f"Validation rows: {len(val_idx)}",
         (

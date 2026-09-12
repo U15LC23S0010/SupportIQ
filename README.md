@@ -13,6 +13,7 @@ The main goal was not to build the most complex model possible. I focused on mak
 ## 1. Project Structure
 
 supportiq/
+
 │
 ├── data/
 │   └── raw/
@@ -58,6 +59,7 @@ supportiq/
 ├── requirements.txt
 └── README.md
 
+
 The repository contains only the scripts used by the final pipeline and evaluation. Earlier exploratory scripts were removed from the submission to keep the repository focused.
 
 ## 2. Setup
@@ -68,7 +70,7 @@ Install the dependencies:
 
 python -m pip install -r requirements.txt
 
-Then set the project root on PYTHONPATH:
+Then set the project root on `PYTHONPATH`:
 
 $env:PYTHONPATH = (Get-Location).Path
 
@@ -84,15 +86,15 @@ The submitted repository contains the trained classifier and retrieval artifacts
 
 The project uses the Kaggle dataset:
 
-thoughtvector/customer-support-on-twitter
+`thoughtvector/customer-support-on-twitter`
 
 The full dataset contains:
 
-• 2,811,774 tweets
-• 702,777 unique authors
-• timestamps from 2008 to 2017
+* 2,811,774 tweets
+* 702,777 unique authors
+* timestamps from 2008 to 2017
 
-The dataset contains real customer-support conversations between customers and many different brands, which made it useful for testing the pipeline on noisy, short, multi-turn messages.
+The dataset contains customer-support conversations between customers and many different brands, which made it useful for testing the pipeline on noisy, short, multi-turn messages.
 
 More information about the dataset columns is in:
 
@@ -104,20 +106,20 @@ I did not pick the brand only because it had a large number of tweets.
 
 I compared major support accounts using:
 
-• customer-message volume
-• support-message volume
-• valid customer-to-support relationships
-• conversation depth
-• diversity of customer issues
+* customer-message volume
+* support-message volume
+* valid customer-to-support relationships
+* conversation depth
+* diversity of customer issues
 
 Tesco gave me a good balance between enough historical data and a wide range of support situations.
 
 The Tesco subset contained:
 
-16,722 reconstructed conversations
-34,228 customer messages
-38,573 Tesco support messages
-38,468 valid customer → Tesco relationships
+* 16,722 reconstructed conversations
+* 34,228 customer messages
+* 38,573 Tesco support messages
+* 38,468 valid customer → Tesco relationships
 
 The brand-selection analysis is documented in:
 
@@ -141,6 +143,7 @@ I also kept two review-only categories:
 non_support_social
 other_unclear
 
+
 These were useful during annotation because not every tweet is a normal support request. For example, a casual thank-you should not be forced into one of the normal support categories.
 
 The annotation rules were frozen before the final golden-set evaluation and are documented in:
@@ -149,19 +152,19 @@ annotation_guidelines.md
 
 Some important rules were:
 
-• genuine safety concerns take priority over ordinary product-quality complaints
-• trying to find or obtain a product is availability
-• asking about ingredients, rules, specifications, or policies is information/policy
-• simply mentioning a store does not automatically make something a store/service issue
-• Tesco mentioning the word "feedback" does not automatically make the customer's intent feedback
+* genuine safety concerns take priority over ordinary product-quality complaints
+* trying to find or obtain a product is availability
+* asking about ingredients, rules, specifications, or policies is information/policy
+* simply mentioning a store does not automatically make something a store/service issue
+* Tesco mentioning the word "feedback" does not automatically make the customer's intent feedback
 
 ## 6. Golden Evaluation Set
 
 The final golden evaluation set contains:
 
-172 hand-labelled conversations
-151 target-intent cases
-21 review-only cases
+* 172 hand-labelled conversations
+* 151 target-intent cases
+* 21 review-only cases
 
 The assignment requires 150–250 hand-labelled examples, so I intentionally stopped at 172 rather than changing the set after seeing the results.
 
@@ -179,10 +182,10 @@ I built the historical corpus as customer message → Tesco response pairs. This
 
 The development corpus contained:
 
-37,855 historical customer → Tesco response pairs
-0 golden conversation IDs retained
-0 missing customer messages
-0 missing Tesco responses
+* 37,855 historical customer → Tesco response pairs
+* 0 golden conversation IDs retained
+* 0 missing customer messages
+* 0 missing Tesco responses
 
 The historical corpus was built separately from the final golden set, and golden conversations were removed before the retrieval index was created.
 
@@ -194,9 +197,9 @@ I used a conservative weak-supervision approach to create development labels.
 
 The final accepted A1.6 set contained:
 
-1,592 accepted weak labels
-0 conflicts
-36,263 unmatched examples
+* 1,592 accepted weak labels
+* 0 conflicts
+* 36,263 unmatched examples
 
 These labels were used for development only. They were never treated as ground truth.
 
@@ -234,6 +237,7 @@ Its results are saved in:
 results/tables/majority_baseline_metrics.json
 results/tables/majority_baseline_report.txt
 
+
 ### Simple learned baseline
 
 The simple learned baseline is:
@@ -241,6 +245,7 @@ The simple learned baseline is:
 TF-IDF word + character n-grams
 +
 LinearSVC
+
 
 ### Final model
 
@@ -264,7 +269,7 @@ Both learned models used the same grouped development split.
 | TF-IDF + LinearSVC           |       93.53% |       80.83% |        44.37% |        34.57% |
 | TF-IDF + Logistic Regression |       93.53% |       80.83% |        47.68% |        37.53% |
 
-The majority-class baseline gives a lower bound, LinearSVC is the simple learned baseline, and Logistic Regression was selected because it performed best on the frozen golden set.
+The majority-class baseline provides a trivial reference point. LinearSVC is the simple learned baseline, and Logistic Regression was selected because it performed best on the frozen golden set.
 
 ## 10. Retrieval
 
@@ -276,16 +281,16 @@ results/models/tesco_retrieval_tfidf_vectorizer.joblib
 results/models/tesco_retrieval_tfidf_matrix.joblib
 results/models/tesco_retrieval_records.joblib
 
-Run the retrieval smoke test with:
 
+Run the retrieval smoke test with:
 python .\scripts\test_tesco_retriever.py
 
 The retriever returns:
 
-• similar historical customer messages
-• Tesco's historical responses
-• similarity scores
-• conversation IDs
+* similar historical customer messages
+* Tesco's historical responses
+* similarity scores
+* conversation IDs
 
 I kept the retrieval layer intentionally simple and inspectable rather than using a more complex black-box retrieval service.
 
@@ -299,25 +304,24 @@ python .\scripts\test_supportiq_agent.py
 
 The agent produces:
 
-intent
-intent confidence
-evidence consistency
-decision
-decision reason
-draft reply
-historical evidence
+* intent
+* intent confidence
+* evidence consistency
+* decision
+* decision reason
+* draft reply
+* historical evidence
 
 The current decision policy is deliberately conservative:
 
-• safety-sensitive cases are always escalated
-• low-confidence predictions are escalated
-• weak or missing evidence is escalated
-• only routine cases with sufficient confidence and evidence can be auto-handled
+* safety-sensitive cases are always escalated
+* low-confidence predictions are escalated
+* weak or missing evidence is escalated
+* only routine cases with sufficient confidence and evidence can be auto-handled
 
 ## 12. Frozen-Gold Evaluation
 
 Run:
-
 python .\scripts\evaluate_supportiq_agent.py
 
 The main outputs are:
@@ -342,28 +346,32 @@ The low AUTO_HANDLE count is expected because the current policy is intentionall
 I manually reviewed 32 cases, with four examples from each target intent.
 
 The review file is:
-
 results/tables/supportiq_reply_human_review_sample_32_scored.csv
+
 
 I used the following rubric:
 
-Reply quality:
+### Reply quality
+
 0 = poor
 1 = acceptable
 2 = strong
 
-Groundedness:
+### Groundedness
+
 0 = unsupported
 1 = partial
 2 = strong
 
-Handling:
+
+### Handling
+
 AUTO_HANDLE
 ESCALATE
 
 Results:
-
 Cases: 32
+
 Mean reply quality: 0.9688 / 2
 Mean groundedness: 1.8125 / 2
 Human AUTO_HANDLE: 12
@@ -386,11 +394,11 @@ results/tables/supportiq_top5_failure_cases.csv
 
 The main failure patterns were:
 
-• high-confidence wrong intent predictions
-• product-quality messages classified as delivery
-• availability messages classified as safety-sensitive
-• positive feedback classified as safety-sensitive
-• pricing questions classified as availability
+* high-confidence wrong intent predictions
+* product-quality messages classified as delivery
+* availability messages classified as safety-sensitive
+* positive feedback classified as safety-sensitive
+* pricing questions classified as availability
 
 These failures suggest that improving the classifier and reply-generation stage would have more value than simply making the retrieval system more complicated.
 
@@ -442,13 +450,14 @@ Output:
 
 results/tables/supportiq_llm_judgments_32.csv
 
+
 ### Human vs LLM agreement
 
-| Dimension         | Exact Agreement | Kappa |
-| ----------------- | --------------: | ----: |
-| Reply quality     |           12.5% | 0.061 |
+| Dimension         | Exact Agreement |  Kappa |
+| ----------------- | --------------: | -----: |
+| Reply quality     |           12.5% |  0.061 |
 | Groundedness      |           46.9% | -0.107 |
-| Handling decision |           65.6% | 0.137 |
+| Handling decision |           65.6% |  0.137 |
 
 Reply quality and groundedness use quadratic weighted Cohen's kappa because their labels are ordinal. Handling decision uses ordinary Cohen's kappa.
 
@@ -468,7 +477,7 @@ The complete evaluation summary is:
 results/tables/supportiq_evaluation_summary.json
 results/tables/supportiq_evaluation_summary.txt
 
-To run the Gemini evaluation again, set GEMINI_API_KEY and run:
+To run the Gemini evaluation again, set `GEMINI_API_KEY` and run:
 
 python .\scripts\prepare_llm_judge_batch.py
 python .\scripts\run_gemini_llm_judge.py
@@ -476,19 +485,17 @@ python .\scripts\calculate_human_llm_agreement.py
 
 The completed judge results are already included in the repository, so a reviewer does not need an API key just to inspect the completed evaluation.
 
-## 17. What I Would Do With One More Week
-
-The project itself was completed in four days, from September 9 to September 12, 2026. The following is what I would do with one additional week after submission.
+## 9. One-week improvement plan
 
 ### Days 1–2: improve intent classification
 
 I would collect more labelled examples for the main confusion pairs:
 
-• feedback vs safety
-• availability vs information
-• product quality vs pricing
-• delivery issue vs delivery information
-• store/service vs simple store mentions
+* feedback vs safety
+* availability vs information
+* product quality vs pricing
+* delivery issue vs delivery information
+* store/service vs simple store mentions
 
 I would use the confusion matrix to drive the sampling instead of adding more keyword rules.
 
@@ -498,13 +505,11 @@ The current deterministic response templates are the biggest weakness.
 
 I would replace them with constrained generation that:
 
-• answers the actual customer question
-• uses the retrieved Tesco examples as evidence
-• avoids inventing policies
-• asks for information Tesco historically requested
-• escalates when the retrieved evidence is insufficient
-
-### Day 5: calibrate the handling decision
+* answers the actual customer question
+* uses the retrieved Tesco examples as evidence
+* avoids inventing policies
+* asks for information Tesco historically requested
+* escalates when the retrieved evidence is insufficient
 
 I would evaluate whether the current 0.70 confidence threshold is appropriate.
 
@@ -512,11 +517,6 @@ More importantly, I would measure AUTO_HANDLE precision separately from overall 
 
 I would keep the frozen golden set separate from threshold tuning.
 
-### Days 6–7: strengthen evaluation
-
-I would expand the human review set using the failure categories already identified and continue tracking where the human and LLM judges disagree.
-
-I would also test semantic retrieval as an alternative to the current TF-IDF retriever and compare its effect on both evidence quality and final reply quality.
 
 ## 18. Decision Log
 
@@ -526,19 +526,19 @@ DECISION_LOG.md
 
 The log covers the non-obvious choices around:
 
-• brand selection
-• retrieval design
-• leakage prevention
-• taxonomy design
-• safety precedence
-• weak supervision
-• rejecting A1.7
-• model and baseline selection
-• grouped validation
-• escalation policy
-• golden-set freezing
-• human review
-• LLM judging
+* brand selection
+* retrieval design
+* leakage prevention
+* taxonomy design
+* safety precedence
+* weak supervision
+* rejecting A1.7
+* model and baseline selection
+* grouped validation
+* escalation policy
+* golden-set freezing
+* human review
+* LLM judging
 
 ## 19. Limitations
 
@@ -546,13 +546,13 @@ This is a prototype, not a production customer-support system.
 
 The main limitations are:
 
-• the golden evaluation set contains 172 conversations
-• 151 of those belong to the target intents
-• some smaller intents have relatively few evaluation examples
-• retrieval is lexical TF-IDF rather than embedding-based semantic retrieval
-• the current reply generator is deterministic
-• the escalation policy is intentionally conservative
-• the LLM judge has low agreement with the human reviewer
+* the golden evaluation set contains 172 conversations
+* 151 of those belong to the target intents
+* some smaller intents have relatively few evaluation examples
+* retrieval is lexical TF-IDF rather than embedding-based semantic retrieval
+* the current reply generator is deterministic
+* the escalation policy is intentionally conservative
+* the LLM judge has low agreement with the human reviewer
 
 Despite these limitations, the project provides a complete pipeline from noisy support data to intent classification, historical evidence retrieval, response drafting, handling decisions, human evaluation, and independent LLM judging.
 

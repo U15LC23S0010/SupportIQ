@@ -30,10 +30,6 @@ REPORT_PATH = Path(
     "results/tables/supportiq_agent_evaluation_report.txt"
 )
 
-HUMAN_REVIEW_PATH = Path(
-    "results/tables/supportiq_reply_human_review.csv"
-)
-
 TARGET_INTENTS = [
     "delivery_order",
     "pricing_payment",
@@ -51,9 +47,32 @@ def main() -> None:
     print("SUPPORTIQ — AGENT EVALUATION HARNESS")
     print("=" * 80)
 
-    gold = pd.read_csv(
-        GOLD_PATH
-    )
+    if not GOLD_PATH.exists():
+        raise FileNotFoundError(
+            f"Golden evaluation file not found: {GOLD_PATH}"
+        )
+
+    gold = pd.read_csv(GOLD_PATH)
+
+    required_columns = {
+        "conversation_id",
+        "evaluation_incoming_tweet_id",
+        "evaluation_incoming_message",
+        "human_intent",
+    }
+
+    missing_columns = required_columns - set(gold.columns)
+
+    if missing_columns:
+        raise ValueError(
+            "Golden evaluation set is missing required columns: "
+            f"{sorted(missing_columns)}"
+        )
+
+    if len(gold) != 172:
+        raise ValueError(
+            f"Expected 172 golden evaluation rows, found {len(gold)}"
+        )
 
     agent = SupportIQAgent()
 
@@ -150,6 +169,11 @@ def main() -> None:
         )
     ].copy()
 
+    if target.empty:
+        raise ValueError(
+            "No target-intent rows were found in the golden set."
+        )
+
     accuracy = accuracy_score(
         target["human_intent"],
         target["predicted_intent"],
@@ -175,35 +199,43 @@ def main() -> None:
         labels=TARGET_INTENTS,
     )
 
-    auto_handle_count = (
-        predictions["decision"]
-        == "AUTO_HANDLE"
-    ).sum()
+    auto_handle_count = int(
+        (
+            predictions["decision"]
+            == "AUTO_HANDLE"
+        ).sum()
+    )
 
-    escalate_count = (
-        predictions["decision"]
-        == "ESCALATE"
-    ).sum()
+    escalate_count = int(
+        (
+            predictions["decision"]
+            == "ESCALATE"
+        ).sum()
+    )
 
-    safety_count = (
-        predictions["predicted_intent"]
-        == "product_safety_sensitive"
-    ).sum()
-
-    safety_escalated = (
-        predictions[
+    safety_count = int(
+        (
             predictions["predicted_intent"]
             == "product_safety_sensitive"
-        ]["decision"]
-        == "ESCALATE"
-    ).sum()
+        ).sum()
+    )
+
+    safety_escalated = int(
+        (
+            predictions[
+                predictions["predicted_intent"]
+                == "product_safety_sensitive"
+            ]["decision"]
+            == "ESCALATE"
+        ).sum()
+    )
 
     metrics = {
-        "gold_total_rows": len(
-            predictions
+        "gold_total_rows": int(
+            len(predictions)
         ),
-        "gold_target_rows": len(
-            target
+        "gold_target_rows": int(
+            len(target)
         ),
         "intent_accuracy": float(
             accuracy
@@ -211,12 +243,8 @@ def main() -> None:
         "intent_macro_f1": float(
             macro_f1
         ),
-        "auto_handle_count": int(
-            auto_handle_count
-        ),
-        "escalate_count": int(
-            escalate_count
-        ),
+        "auto_handle_count": auto_handle_count,
+        "escalate_count": escalate_count,
         "auto_handle_rate": (
             float(auto_handle_count)
             / len(predictions)
@@ -225,12 +253,8 @@ def main() -> None:
             float(escalate_count)
             / len(predictions)
         ),
-        "safety_predictions": int(
-            safety_count
-        ),
-        "safety_escalated": int(
-            safety_escalated
-        ),
+        "safety_predictions": safety_count,
+        "safety_escalated": safety_escalated,
         "safety_escalation_rate": (
             float(safety_escalated)
             / safety_count
@@ -329,34 +353,6 @@ def main() -> None:
         encoding="utf-8",
     )
 
-    review = predictions[
-        [
-            "conversation_id",
-            "evaluation_incoming_tweet_id",
-            "customer_message",
-            "human_intent",
-            "predicted_intent",
-            "intent_confidence",
-            "evidence_consistency",
-            "decision",
-            "decision_reason",
-            "draft_reply",
-            "top_retrieval_similarity",
-            "evidence",
-        ]
-    ].copy()
-
-    review["human_reply_quality"] = ""
-    review["human_grounded"] = ""
-    review["human_handling_decision"] = ""
-    review["human_notes"] = ""
-
-    review.to_csv(
-        HUMAN_REVIEW_PATH,
-        index=False,
-        encoding="utf-8",
-    )
-
     print()
     print("=" * 80)
     print("RESULTS")
@@ -409,10 +405,6 @@ def main() -> None:
 
     print(
         REPORT_PATH.resolve()
-    )
-
-    print(
-        HUMAN_REVIEW_PATH.resolve()
     )
 
 
