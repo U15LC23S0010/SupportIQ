@@ -2,6 +2,7 @@
 
 ## Version
 
+Version 1.1 — frozen before final golden-set annotation.
 if still tied, prefer the issue requiring greater support intervention or carrying greater support risk;
 
 ## Annotation objective

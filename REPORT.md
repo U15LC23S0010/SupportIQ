@@ -66,7 +66,6 @@ The golden set was intentionally frozen at 172 because the assignment requires 1
 A conservative high-precision weak-supervision process produced A1.6 with:
 
 * 1,592 accepted weak labels
-* 0 conflicts
 * 36,263 unmatched messages discarded
 
 Weak labels were used for model development only and were not treated as ground truth.
@@ -255,8 +254,6 @@ This statistic is only a warning signal because the sample contains three high-c
 The current system can therefore retrieve useful historical evidence even when its headline intent prediction is wrong. Conversely, strong retrieval does not guarantee a strong generated reply.
 
 ## 9. One-week improvement plan
-
-The project was completed in four days, from September 9 to September 12, 2026.
 
 ### Days 1–2: improve intent classification
 

@@ -35,7 +35,6 @@ supportiq/
 │   ├── compare_tfidf_baselines_shared_split.py
 │   ├── evaluate_majority_baseline.py
 │   ├── evaluate_supportiq_agent.py
-│   ├── golden_annotation_tool.py
 │   ├── human_reply_review_tool.py
 │   ├── prepare_human_reply_review.py
 │   ├── prepare_llm_judge_batch.py
@@ -198,7 +197,6 @@ I used a conservative weak-supervision approach to create development labels.
 The final accepted A1.6 set contained:
 
 * 1,592 accepted weak labels
-* 0 conflicts
 * 36,263 unmatched examples
 
 These labels were used for development only. They were never treated as ground truth.
@@ -485,7 +483,9 @@ python .\scripts\calculate_human_llm_agreement.py
 
 The completed judge results are already included in the repository, so a reviewer does not need an API key just to inspect the completed evaluation.
 
-## 9. One-week improvement plan
+## 17. One-week improvement plan
+
+The project was completed in four days, from September 9 to September 12, 2026.
 
 ### Days 1–2: improve intent classification
 
@@ -511,12 +511,19 @@ I would replace them with constrained generation that:
 * asks for information Tesco historically requested
 * escalates when the retrieved evidence is insufficient
 
+### Day 5: confidence and handling calibration
+
 I would evaluate whether the current 0.70 confidence threshold is appropriate.
 
 More importantly, I would measure AUTO_HANDLE precision separately from overall classification accuracy.
 
 I would keep the frozen golden set separate from threshold tuning.
 
+### Days 6–7: evaluation improvement
+
+I would expand the human review set using the failure categories already identified and continue tracking disagreements between human and LLM judges.
+
+I would also test whether larger and more diverse review samples change the observed agreement patterns and use disagreement cases to refine the evaluation rubric.
 
 ## 18. Decision Log
 
