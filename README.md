@@ -1,4 +1,4 @@
-﻿# SupportIQ — Evidence-Grounded AI Customer Support Agent
+# SupportIQ — Evidence-Grounded AI Customer Support Agent
 
 SupportIQ is a small AI customer-support system built on the Customer Support on Twitter (TWCS) dataset.
 

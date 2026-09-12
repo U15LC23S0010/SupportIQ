@@ -1,4 +1,4 @@
-﻿# SupportIQ — Tesco Annotation Guidelines
+# SupportIQ — Tesco Annotation Guidelines
 
 ## Version
 

@@ -1,4 +1,4 @@
-﻿# SupportIQ — Decision Log
+# SupportIQ — Decision Log
 
 1. **Selected Tesco as the target brand**
 
